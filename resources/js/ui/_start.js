@@ -11,6 +11,7 @@ require('./starters/formManipulation');
 //--------------------[ PayPal ]--------------------//
 require('./modules/paypal');
 
+require('../functions/frontend');
 //--------------------[ Menu ]--------------------//
 //Mega Menu
 require('./modules/menu');

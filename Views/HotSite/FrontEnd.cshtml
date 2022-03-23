@@ -1,0 +1,114 @@
+@{
+    ViewBag.Title = "Front End";
+    Layout = "~/Views/Shared/Base/_LayoutBreadCrumbContent.cshtml";
+}
+
+@section breadcrumbs {
+<div class="ui container">
+    <div class="ui one column grid stackable middle aligned">
+        <div class="row">
+            <div class="column">
+                <h1>@ViewBag.Title</h1>
+                <div class="ui breadcrumb text small">
+                    <a class="section" href="/">Home</a>
+                    <i class="right angle icon divider"></i>
+                    <a class="section" href="/hotsite/frontend">Front End</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+}
+
+
+<form class="ui form">
+    <div class="ui segment">
+        <div class="ui grid stackable top aligned left aligned grid">
+            <div class="row two column divided horizontal">
+                <!-- CAMPOS -->
+                <div class="column">
+                    <div class="ui form">
+                        <h4 class="ui dividing header">Formulario de Contato</h4>
+
+                        <div class="field required">
+                            <label>Nome</label>
+                            <div class="ui left input">
+                                <input type="text" id="nome" name="Nome" placeholder="Nome" data-validate="name">
+
+                            </div>
+                        </div>
+
+                        <div class="field required">
+                            <label>E-mail</label>
+                            <div class="ui left input">
+                                <input type="text" id="email" name="Email" placeholder="E-mail">
+                            </div>
+                        </div>
+
+                        <div class="field required">
+                            <label>Telefone</label>
+                            <div class="ui left input">
+                                <input type="tel" id="telefone" name="Telefone" placeholder="(00) 00000-0000"
+                                    class="masked mask_phone" data-validate="phone">
+                            </div>
+                        </div>
+
+                        <div class="field required">
+                            <label>Assunto</label>
+                            <div class="ui left input">
+                                <input type="text" id="assunto" name="Assunto" placeholder="Assunto">
+                            </div>
+                        </div>
+
+                        <div class="field required">
+                            <label>Mensagem</label>
+                            <div class="ui left input">
+                                <textarea  id="mensagem" name="Mensagem" cols="5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- VALORES -->
+                <div class="column">
+                    <div class="ui form">
+                        <h4 class="ui dividing header">Resumo do Preenchimento</h4>
+
+                        <div class="column">
+                            <a id="lblcampo_nome"></a>
+                            <a id="lblvalor_nome"></a>
+                        </div>
+
+                        <div class="column">
+                            <a id="lblcampo_email"></a>
+                            <a id="lblvalor_email"></a>
+                        </div>
+
+                        <div class="column">
+                            <a id="lblcampo_telefone"></a>
+                            <a id="lblvalor_telefone"></a>
+                        </div>
+
+                        <div class="column">
+                            <a id="lblcampo_assunto"></a>
+                            <a id="lblvalor_assunto"></a>
+                        </div>
+
+                        <div class="column">
+                            <a id="lblcampo_mensagem"></a>
+                            <a id="lblvalor_mensagem"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="column">
+                    <div class="ui submit button">Cadastrar</div>
+                    <div class="ui error message"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
