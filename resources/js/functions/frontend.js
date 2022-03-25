@@ -2,29 +2,26 @@ $(document)
     .ready(function () {
 
         $("form").submit(function (event) {
-            console.log("formt");
-            dadosContato = {}
-            dadosContato["nome"] = $("#nome").val();
-            dadosContato["email"] = $("#email").val();
-            dadosContato["telefone"] = $("#telefone").val();
-            dadosContato["assunto"] = $("#assunto").val();
-            dadosContato["mensagem"] = $("#mensagem").val();
+            if ($('form').form('is valid')) {                
+                dadosContato = {}
+                dadosContato["nome"] = $("#nome").val();
+                dadosContato["email"] = $("#email").val();
+                dadosContato["telefone"] = $("#telefone").val();
+                dadosContato["assunto"] = $("#assunto").val();
+                dadosContato["mensagem"] = $("#mensagem").val();
 
-            localStorage.setItem('dadosContato', JSON.stringify(dadosContato));
+                sessionStorage.setItem('dadosContato', JSON.stringify(dadosContato));
+            }
         });
 
 
-        var dadosSalvo = JSON.parse(localStorage.getItem("dadosContato"));
+        var dadosSalvo = JSON.parse(sessionStorage.getItem("dadosContato"));
         if (dadosSalvo == null) {
             dadosSalvo = "[{}]";
         }
 
 
-        var textPerson = preencherFormulario(dadosSalvo);
-
-        console.log("textPerson");
-        console.log(textPerson);
-
+        preencherFormulario(dadosSalvo);
 
         function preencherFormulario(dados) {
 
@@ -36,6 +33,7 @@ $(document)
 
             return "";
         }
+
 
         $('input').on('change', function () {
             var campo = this.name;
@@ -54,7 +52,6 @@ $(document)
 
         $('.ui.form')
             .form({
-
                 on: 'blur',
                 inline: true,
                 fields: {
